@@ -8,10 +8,10 @@ module bound_flasher_tb();
     wire [3:0]index;
     wire [3:0]max_value, min_value;
 
-    initial begin
-        $recordfile ("waves");
-        $recordvars ("depth=0", bound_flasher_tb);
-    end
+    // initial begin
+    //     $recordfile ("waves");
+    //     $recordvars ("depth=0", bound_flasher_tb);
+    // end
 
     initial begin
         clk = 1'b0;
@@ -24,28 +24,50 @@ module bound_flasher_tb();
     end
 
     initial begin
-        #734 flick <= 1'b1;
+        #0 flick <= 1'b0;
+
+        // test flick when reset = 0
+        #50 flick <= 1'b1;
         #4 flick <= 1'b0; 
+
+        // start 1st cycle
+        #138 flick <= 1'b1;
+        #4 flick <= 1'b0; 
+
+        // DOWN-LAMP[5] flick
+        #484 flick <= 1'b1;
+        #4 flick <= 1'b0; 
+
+        // DOWN-LAMP[0] flick
         #675 flick <= 1'b1;
         #4 flick <= 1'b0;
+
+        // start 2nd cycle
         #800 flick <= 1'b1;
         #15 flick <= 1'b0;
-        #700 $finish;
+
+        // start 3rd cycle
+        #1200 flick <= 1'b1;
+        #10 flick <= 1'b0;
+
+        // reset when flashing 3rd cycle
+        #400 rst_n <= 1'b0;
+        #50 $finish;
     end
 
-    initial begin
-        #1604 rst_n = 1'b0;
-    end
 
-    initial begin
-        #0 flick <= 1'b1;
-        #4 flick <= 1'b0;
-        #44 flick <= 1'b1;
-        #2 flick <= 1'b0;
-        #208 flick <= 1'b1;
-        #2 flick <= 1'b0;
+    bound_flasher BoundFlasher(
+        // inputs
+        .clk(clk),
+        .rst_n(rst_n),
+        .flick(flick),
 
-        #378 flick <= 1'b1;
-        #2 flick <= 1'b0;
-    end  
+        // outputs
+        .LED_val(LED_val),
+        .state(state),
+        .index(index),
+        .max_value(max_value),
+        .min_value(min_value),
+        .LED(LED)
+        );
 endmodule
