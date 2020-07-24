@@ -22,7 +22,7 @@ module bound_flasher_tb();
     initial begin
         #734 flick <= 1'b1;
         #4 flick <= 1'b0; 
-        #675 flick <= 1'b1;
+        #713 flick <= 1'b1;
         #4 flick <= 1'b0;
     end
 
