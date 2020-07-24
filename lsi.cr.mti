@@ -1,8 +1,1 @@
-D:/ModelSimPE/workspace/lsi/bound_flasher.v {1 {vlog -work work -stats=none D:/ModelSimPE/workspace/lsi/bound_flasher.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module bound_flasher
 
-Top level modules:
-	bound_flasher
-
-} {} {}}

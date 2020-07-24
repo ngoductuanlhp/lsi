@@ -28,7 +28,7 @@ module bound_flasher(clk, rst_n, flick, LED_val, state, index, max_value, min_va
     parameter POSITION_LED5 = 4'd5, POSITION_LED0 = 4'd0;
     parameter MAX_STEP = 5;
 
-    assign flick_trigger = (state == IDLE || (state == DOWN && (LED_val == POSITION_LED0 || LED_val == POSITION_LED5))) ? flick : 0;
+    assign flick_trigger = (state == IDLE || (state == DOWN && index != MAX_STEP && (LED_val == POSITION_LED0 || LED_val == POSITION_LED5))) ? flick : 0;
     // assign flick_index = (state == IDLE) ? 4'd0 : (LED_val == POSITION_LED0 ? index - 4'd2 : index - 4'd1);
     assign flick_index = (state == IDLE) ? 4'd0 : (index - 4'd1);
     // assign flick_LED_val = (state == IDLE) ? 4'd1 : (4'd3);
