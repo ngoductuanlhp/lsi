@@ -92,46 +92,47 @@ module bound_flasher(clk, rst_n, flick, LED);
                 next_index  = 4'd0;
             end
         end
+        // IDLE:
         IDLE:begin
             next_state  = IDLE;
             next_LED_val= 16'd0;
             next_index  = 4'd0;
         end
         UP:begin
-            if (LED_val == max_value)
-                if (index == MAX_STEP) begin
-                    next_state  = IDLE;
-                    next_LED_val= 16'd0;
-                    next_index  = 4'd0;
-                end
-                else begin
-                    next_state  = DOWN;
-                    next_LED_val= LED_val - 1;
-                    next_index  = index + 1;
-                end
-            else begin 
+            if (LED_val < max_value) begin 
                 next_state  = state;
                 next_LED_val= LED_val + 1;
 		        next_index  = index;
             end
-        end
-        DOWN:begin
-            if (LED_val == min_value)
-                if (index == MAX_STEP) begin
+            else
+                if (index < MAX_STEP) begin
+                    next_state  = DOWN;
+                    next_LED_val= LED_val - 1;
+                    next_index  = index + 1;
+                end 
+                else begin
                     next_state  = IDLE;
                     next_LED_val= 16'd0;
                     next_index  = 4'd0;
                 end
-                else begin
-                    next_state  = UP;
-		            next_LED_val= LED_val + 1;
-                    next_index  = index + 1;
-                end
-            else begin 
+        end
+        DOWN:begin
+            if (LED_val > min_value) begin 
                 next_state  = state;
 		        next_LED_val= LED_val - 1;
                 next_index  = index;
             end
+            else 
+                if (index < MAX_STEP) begin
+                    next_state  = UP;
+		            next_LED_val= LED_val + 1;
+                    next_index  = index + 1;
+                end
+                else begin
+                    next_state  = IDLE;
+                    next_LED_val= 16'd0;
+                    next_index  = 4'd0;
+                end
         end
         endcase
 
