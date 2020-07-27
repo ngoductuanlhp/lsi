@@ -1,6 +1,6 @@
 // Code your design here
-module bound_flasher(clk, rst_n, flick, LED_val, state, index, max_value, min_value, LED);
-// module bound_flasher(clk, rst_n, flick, LED);
+//module bound_flasher(clk, rst_n, flick, LED_val, state, index, max_value, min_value, LED);
+module bound_flasher(clk, rst_n, flick, LED);
     input clk, rst_n, flick;
     output reg [3:0]LED_val;
     output reg [1:0]state;
