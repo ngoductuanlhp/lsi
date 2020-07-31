@@ -121,7 +121,7 @@ module bound_flasher_tb();
         #4 flick <= 1'b0;
     end
 
-    bound_flasher_v2 BoundFlasher(
+    bound_flasher BoundFlasher(
         // inputs
         .clk(clk),
         .rst_n(rst_n),
