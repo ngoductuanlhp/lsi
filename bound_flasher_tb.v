@@ -53,11 +53,11 @@ module bound_flasher_tb();
         #4 flick <= 1'b0; 
 
         // FLICK at state DOWN LED[5]
-        #516 flick <= 1'b1;
+        #530 flick <= 1'b1;
         #4 flick <= 1'b0;
 
         // FLICK at state DOWN LED[0]
-        #755 flick <= 1'b1;
+        #780 flick <= 1'b1;
         #4 flick <= 1'b0;
 
         // FLICK at random point 
@@ -65,18 +65,18 @@ module bound_flasher_tb();
         #4 flick <= 1'b0;
 
         // FLICK at random point 
-        #200 flick <= 1'b1;
+        #140 flick <= 1'b1;
         #4 flick <= 1'b0;
 
         // FLICK at random point 
-        #200 flick <= 1'b1;
+        #170 flick <= 1'b1;
         #4 flick <= 1'b0; 
 
         // #150 flick <= 1'b1;
         // #4 flick <= 1'b0; 
 
         // FLICK at state DOWN LED[0] in final step
-        #200 flick <= 1'b1;
+        #360 flick <= 1'b1;
         #4 flick <= 1'b0; 
     end
 
@@ -121,7 +121,7 @@ module bound_flasher_tb();
         #4 flick <= 1'b0;
     end
 
-    bound_flasher BoundFlasher(
+    bound_flasher_v2 BoundFlasher(
         // inputs
         .clk(clk),
         .rst_n(rst_n),
