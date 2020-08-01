@@ -18,6 +18,10 @@ module bound_flasher_tb();
         forever #10 clk = ~clk; // generate a clock
     end
 
+    always @(posedge clk) begin
+        $display("t=%d, flick=%b, rst_n=%b,lamp     =%b", $time, flick, rst_n, LED);
+    end
+
     initial begin
         #10000 $finish;
     end
