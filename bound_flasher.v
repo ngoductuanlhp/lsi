@@ -38,7 +38,7 @@ module bound_flasher(clk, rst_n, flick, LED);
         end
         else if (flick_trigger) begin
             state   <= UP;
-            LED     <= LED;
+            // LED     <= LED;
             index   <= flick_index;
         end
         else begin
