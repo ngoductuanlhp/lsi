@@ -30,11 +30,17 @@ module bound_flasher_tb();
     initial begin
         rst_n <= 1'b0;
         flick <= 1'b0;
+        
+        #10 rst_n <= 1'b1;
+        #20 flick <= 1'b1;
+        #4 flick <= 1'b0;
+        #46 rst_n <= 1'b0;
 
-        #50 rst_n <= 1'b1;
+        #10 rst_n <= 1'b1;
 
         // start 1st cycle
-        #25 flick <= 1'b1;
+        //#25 flick <= 1'b1;
+        flick <= 1'b1;
         #4 flick <= 1'b0; 
 
         // start 2nd cycle
