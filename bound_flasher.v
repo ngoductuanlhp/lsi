@@ -28,8 +28,8 @@ module bound_flasher(clk, rst_n, flick, LED);
     assign max_array[1]    = 16'hffff;
     assign max_array[2]    = 16'h07ff;
     assign max_array[3]    = 16'h07ff;
-    assign max_array[4]    = 16'h007f;
-    assign max_array[5]    = 16'h007f; 
+    assign max_array[4]    = 16'h003f;
+    assign max_array[5]    = 16'h003f; 
 
     assign min_array[0]    = 16'h0000;
     assign min_array[1]    = 16'h001f;

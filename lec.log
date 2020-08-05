@@ -8,7 +8,7 @@ Cadence Design Systems, Inc., and may be used and disclosed only as authorized
 in a license agreement controlling such use and disclosure.
 
 0
-CPU time     : 1.20    seconds
+CPU time     : 1.19    seconds
 Elapse time  : 18      seconds
 Memory usage : 312.34  M bytes
 // Command: read_library slow.lib -lib -revised
@@ -17,8 +17,8 @@ Memory usage : 312.34  M bytes
 // Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
 // Note: Read Liberty library successfully
 0
-CPU time     : 1.52    seconds
-Elapse time  : 20      seconds
+CPU time     : 1.53    seconds
+Elapse time  : 19      seconds
 Memory usage : 329.96  M bytes
 // Command: read_design bound_flasher.v -verilog -golden
 // Parsing file bound_flasher.v ...
@@ -33,7 +33,7 @@ Memory usage : 329.96  M bytes
 // Warning: (RTL23) Flop with asynchronous hold might cause non-equivalence with synthesized netlist (occurrence:1)
 // Note: Read VERILOG design successfully
 0
-CPU time     : 1.67    seconds
+CPU time     : 1.68    seconds
 Elapse time  : 22      seconds
 Memory usage : 344.99  M bytes
 // Command: read_design bound_flasher_m.v -verilog -revised
@@ -42,8 +42,8 @@ Memory usage : 344.99  M bytes
 // Warning: (RTL14) Signal has input but it has no output (occurrence:22)
 // Note: Read VERILOG design successfully
 0
-CPU time     : 1.80    seconds
-Elapse time  : 25      seconds
+CPU time     : 1.81    seconds
+Elapse time  : 24      seconds
 Memory usage : 344.99  M bytes
 // Command: set_mapping_method -name only
 0
@@ -53,9 +53,9 @@ Memory usage : 344.99  M bytes
 // Warning: (F34) Converted 32 X assignment(s) as don't care(s)
 // Processing Revised ...
 // Modeling Revised ...
-CPU time     : 2.06    seconds
-Elapse time  : 29      seconds
-Memory usage : 369.73  M bytes
+CPU time     : 2.07    seconds
+Elapse time  : 28      seconds
+Memory usage : 369.74  M bytes
 // Mapping key points ...
 ================================================================================
 Mapped points: SYSTEM class
@@ -89,6 +89,6 @@ Compared points      PO     DFF    DLAT      Total
 Equivalent           16     22     22        60      
 ================================================================================
 0
-CPU time     : 2.41    seconds
-Elapse time  : 31      seconds
-Memory usage : 397.57  M bytes
+CPU time     : 2.43    seconds
+Elapse time  : 30      seconds
+Memory usage : 397.58  M bytes
